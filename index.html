@@ -1,76 +1,154 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Be My Valentine 💕</title>
+    <title>If you dont wanna be my valentine, just say that :(</title>
 
     <style>
         body {
             margin: 0;
-            height: 100vh;
-            background: url("images/image1.jpg") no-repeat center center/cover;
+            min-height: 100vh;
+            background: linear-gradient(to bottom right, #ff99cc, #ff4d88);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .top-text {
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+
+        .top-text h1 {
+            color: white;
+            font-size: 4em;
+            margin: 0;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+
+        .heart-wrapper {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .heart {
+            position: absolute;
+            width: 320px;
+            height: 320px;
+            background: pink;
+            transform: rotate(-45deg);
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 320px;
+            height: 320px;
+            background: pink;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -160px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: 160px;
+            top: 0;
+        }
+
+        .images {
+            position: absolute;
+            width: 100%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
+            gap: 25px;
+            transform: translateY(-20px); /* move slightly upward */
+            z-index: 2;
         }
 
-        .overlay {
+        .images img {
+            width: 150px; /* bigger */
+            border-radius: 18px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        .bottom-section {
+            margin-top: 110px;
             text-align: center;
-            background: rgba(0,0,0,0.45);
-            padding: 40px;
-            border-radius: 25px;
             color: white;
         }
 
-        h1 {
-            font-size: 3em;
-            margin-bottom: 30px;
+        .bottom-section p {
+            font-size: 1.5em;
+            margin-bottom: 20px;
         }
 
         button {
-            padding: 15px 30px;
-            font-size: 18px;
-            border-radius: 12px;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 10px;
             border: none;
             cursor: pointer;
+            margin: 10px;
+        }
+
+        #changeMind {
+            background-color: white;
+            color: #d6336c;
+        }
+
+        #noAgain {
+            background-color: #d6336c;
+            color: white;
             position: absolute;
         }
 
-        #yesBtn {
-            background-color: #ff4d88;
-            color: white;
-        }
-
-        #noBtn {
-            background-color: white;
-            color: #d6336c;
-            left: 50%;
-            top: 65%;
-            transform: translateX(-50%);
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
         }
     </style>
 </head>
 <body>
 
-<div class="overlay">
-    <h1>Will you be my Valentine? 💖</h1>
+<div class="top-text">
+    <h1>If you dont wanna be my valentine, just say that :(</h1>
 </div>
 
-<button id="yesBtn">Yes</button>
-<button id="noBtn" onclick="window.location.href='page2.html'">No</button>
+<div class="heart-wrapper">
+    <div class="heart"></div>
+
+    <div class="images">
+        <img src="images/image2.jpg">
+        <img src="images/image3.jpg">
+    </div>
+</div>
+
+<div class="bottom-section">
+    <p>please?</p>
+
+    <button id="changeMind" onclick="window.location.href='page3.html'">
+        I changed my mind
+    </button>
+
+    <button id="noAgain">I dont wanna be ur valentine</button>
+</div>
 
 <script>
-    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noAgain");
 
-    yesBtn.style.left = "45%";
-    yesBtn.style.top = "65%";
-
-    yesBtn.addEventListener("mouseover", function() {
-        const x = Math.random() * (window.innerWidth - 120);
-        const y = Math.random() * (window.innerHeight - 60);
-        yesBtn.style.left = x + "px";
-        yesBtn.style.top = y + "px";
+    noBtn.addEventListener("mouseover", function() {
+        const x = Math.random() * (window.innerWidth - 200);
+        const y = Math.random() * (window.innerHeight - 100);
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
     });
 </script>
 
