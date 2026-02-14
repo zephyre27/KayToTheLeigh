@@ -1,82 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>You Tried to Say No 😌</title>
+    <title>Oh :(</title>
 
     <style>
         body {
             margin: 0;
             height: 100vh;
-            background: linear-gradient(to bottom right, #ff99cc, #ff4d88);
+            background: url("images/image2.jpg") no-repeat center center/cover;
             display: flex;
             justify-content: center;
             align-items: center;
+            font-family: Arial, sans-serif;
             overflow: hidden;
+            color: white;
         }
 
-        .heart {
-            position: relative;
-            width: 300px;
-            height: 270px;
-            background: pink;
-            transform: rotate(-45deg);
-            animation: float 3s ease-in-out infinite;
+        .content {
+            text-align: center;
+            background: rgba(0,0,0,0.4);
+            padding: 40px;
+            border-radius: 20px;
         }
 
-        .heart:before,
-        .heart:after {
-            content: "";
-            position: absolute;
-            width: 300px;
-            height: 270px;
-            background: pink;
-            border-radius: 50%;
-        }
-
-        .heart:before {
-            top: -150px;
-            left: 0;
-        }
-
-        .heart:after {
-            left: 150px;
-            top: 0;
+        h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
         }
 
         .floating-img {
-            position: absolute;
-            width: 100px;
-            border-radius: 15px;
-            transform: rotate(45deg);
-            animation: bob 4s ease-in-out infinite;
-        }
-
-        .img1 {
-            top: 40px;
-            left: 60px;
-        }
-
-        .img2 {
-            bottom: 40px;
-            right: 60px;
+            width: 200px;
+            border-radius: 20px;
+            animation: float 3s ease-in-out infinite;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         @keyframes float {
-            0%, 100% { transform: rotate(-45deg) translateY(0); }
-            50% { transform: rotate(-45deg) translateY(-10px); }
-        }
-
-        @keyframes bob {
-            0%, 100% { transform: rotate(45deg) translateY(0); }
-            50% { transform: rotate(45deg) translateY(-10px); }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
         }
     </style>
 </head>
 <body>
 
-<div class="heart">
-    <img src="images/image1.jpg" class="floating-img img1">
-    <img src="images/image2.jpg" class="floating-img img2">
+<div class="content">
+    <h1>Oh :(</h1>
+    <img src="images/image3.jpg" class="floating-img">
 </div>
 
 </body>

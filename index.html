@@ -7,23 +7,32 @@
         body {
             margin: 0;
             height: 100vh;
-            background: #ffe6f0;
+            background: url("images/image1.jpg") no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             font-family: Arial, sans-serif;
-            text-align: center;
             overflow: hidden;
         }
 
+        .overlay {
+            text-align: center;
+            background: rgba(0,0,0,0.4);
+            padding: 40px;
+            border-radius: 20px;
+            color: white;
+        }
+
         h1 {
-            margin-top: 100px;
             font-size: 3em;
-            color: #d6336c;
+            margin-bottom: 30px;
         }
 
         button {
             padding: 15px 30px;
             font-size: 18px;
-            border: none;
             border-radius: 10px;
+            border: none;
             cursor: pointer;
             position: absolute;
         }
@@ -34,17 +43,19 @@
         }
 
         #noBtn {
-            background-color: #999;
-            color: white;
+            background-color: white;
+            color: #d6336c;
             left: 50%;
-            top: 60%;
+            top: 65%;
             transform: translateX(-50%);
         }
     </style>
 </head>
 <body>
 
-<h1>Will you be my Valentine? 💖</h1>
+<div class="overlay">
+    <h1>Will you be my Valentine? 💖</h1>
+</div>
 
 <button id="yesBtn">Yes</button>
 <button id="noBtn" onclick="window.location.href='page2.html'">No</button>
@@ -53,11 +64,11 @@
     const yesBtn = document.getElementById("yesBtn");
 
     yesBtn.style.left = "45%";
-    yesBtn.style.top = "60%";
+    yesBtn.style.top = "65%";
 
     yesBtn.addEventListener("mouseover", function() {
-        const x = Math.random() * (window.innerWidth - 100);
-        const y = Math.random() * (window.innerHeight - 50);
+        const x = Math.random() * (window.innerWidth - 120);
+        const y = Math.random() * (window.innerHeight - 60);
         yesBtn.style.left = x + "px";
         yesBtn.style.top = y + "px";
     });
