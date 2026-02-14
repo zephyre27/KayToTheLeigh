@@ -11,24 +11,23 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start; /* push content from top */
             font-family: Arial, sans-serif;
-            padding-top: 80px; /* moves text higher */
         }
 
-        /* TEXT */
-        .text-section {
-            margin-bottom: 80px; /* space between text and heart */
+        /* TOP TEXT */
+        .top-text {
+            margin-top: 40px; /* moves it higher */
+            margin-bottom: 60px;
         }
 
-        .text-section h1 {
+        .top-text h1 {
             color: white;
             font-size: 4em;
             margin: 0;
             text-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
 
-        /* HEART WRAPPER */
+        /* HEART */
         .heart-wrapper {
             position: relative;
             width: 300px;
@@ -36,7 +35,6 @@
             animation: float 3s ease-in-out infinite;
         }
 
-        /* HEART SHAPE */
         .heart {
             position: absolute;
             width: 300px;
@@ -65,7 +63,6 @@
             top: 0;
         }
 
-        /* IMAGE CONTAINER (upright now) */
         .images {
             position: absolute;
             width: 100%;
@@ -83,6 +80,38 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.4);
         }
 
+        /* BOTTOM SECTION */
+        .bottom-section {
+            margin-top: 100px; /* clearance from heart */
+            text-align: center;
+            color: white;
+        }
+
+        .bottom-section p {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        #changeMind {
+            background-color: white;
+            color: #d6336c;
+        }
+
+        #noAgain {
+            background-color: #d6336c;
+            color: white;
+            position: absolute;
+        }
+
         @keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-15px); }
@@ -91,7 +120,7 @@
 </head>
 <body>
 
-<div class="text-section">
+<div class="top-text">
     <h1>Oh :(</h1>
 </div>
 
@@ -103,6 +132,27 @@
         <img src="images/image3.jpg">
     </div>
 </div>
+
+<div class="bottom-section">
+    <p>but think of the mems</p>
+
+    <button id="changeMind" onclick="window.location.href='page3.html'">
+        I changed my mind
+    </button>
+
+    <button id="noAgain">I dont wanna be ur valentine</button>
+</div>
+
+<script>
+    const noBtn = document.getElementById("noAgain");
+
+    noBtn.addEventListener("mouseover", function() {
+        const x = Math.random() * (window.innerWidth - 200);
+        const y = Math.random() * (window.innerHeight - 100);
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+    });
+</script>
 
 </body>
 </html>
