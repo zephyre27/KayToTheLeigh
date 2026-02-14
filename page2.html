@@ -16,8 +16,8 @@
 
         /* TOP TEXT */
         .top-text {
-            margin-top: 40px; /* moves it higher */
-            margin-bottom: 60px;
+            margin-top: 30px; /* higher */
+            margin-bottom: 40px;
         }
 
         .top-text h1 {
@@ -27,18 +27,20 @@
             text-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
 
-        /* HEART */
+        /* HEART WRAPPER */
         .heart-wrapper {
             position: relative;
-            width: 300px;
-            height: 300px;
+            width: 320px;
+            height: 320px;
+            margin-top: 60px; /* moves heart down */
             animation: float 3s ease-in-out infinite;
         }
 
+        /* HEART SHAPE */
         .heart {
             position: absolute;
-            width: 300px;
-            height: 300px;
+            width: 320px;
+            height: 320px;
             background: pink;
             transform: rotate(-45deg);
         }
@@ -47,22 +49,23 @@
         .heart::after {
             content: "";
             position: absolute;
-            width: 300px;
-            height: 300px;
+            width: 320px;
+            height: 320px;
             background: pink;
             border-radius: 50%;
         }
 
         .heart::before {
-            top: -150px;
+            top: -160px;
             left: 0;
         }
 
         .heart::after {
-            left: 150px;
+            left: 160px;
             top: 0;
         }
 
+        /* IMAGES */
         .images {
             position: absolute;
             width: 100%;
@@ -70,25 +73,27 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px;
+            gap: 25px;
+            transform: translateY(-20px); /* centered inside heart */
             z-index: 2;
         }
 
         .images img {
-            width: 120px;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            width: 150px;
+            border-radius: 18px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
         }
 
         /* BOTTOM SECTION */
         .bottom-section {
-            margin-top: 100px; /* clearance from heart */
+            margin-top: 120px; /* clearance from heart */
             text-align: center;
             color: white;
+            position: relative;
         }
 
         .bottom-section p {
-            font-size: 1.5em;
+            font-size: 1.6em;
             margin-bottom: 20px;
         }
 
@@ -134,7 +139,7 @@
 </div>
 
 <div class="bottom-section">
-    <p>please?</p>
+    <p>but think of the mems</p>
 
     <button id="changeMind" onclick="window.location.href='page3.html'">
         I changed my mind
@@ -147,8 +152,8 @@
     const noBtn = document.getElementById("noAgain");
 
     noBtn.addEventListener("mouseover", function() {
-        const x = Math.random() * (window.innerWidth - 200);
-        const y = Math.random() * (window.innerHeight - 100);
+        const x = Math.random() * (window.innerWidth - 220);
+        const y = Math.random() * (window.innerHeight - 120);
         noBtn.style.left = x + "px";
         noBtn.style.top = y + "px";
     });
