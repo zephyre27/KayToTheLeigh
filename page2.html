@@ -7,45 +7,85 @@
         body {
             margin: 0;
             height: 100vh;
-            background: url("images/image2.jpg") no-repeat center center/cover;
+            background: linear-gradient(to bottom right, #ff99cc, #ff4d88);
             display: flex;
             justify-content: center;
             align-items: center;
             font-family: Arial, sans-serif;
             overflow: hidden;
-            color: white;
         }
 
-        .content {
+        .wrapper {
             text-align: center;
-            background: rgba(0,0,0,0.4);
-            padding: 40px;
-            border-radius: 20px;
         }
 
         h1 {
+            color: white;
             font-size: 4em;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
         }
 
-        .floating-img {
-            width: 200px;
-            border-radius: 20px;
+        .heart {
+            position: relative;
+            width: 350px;
+            height: 300px;
+            background: pink;
+            transform: rotate(-45deg);
             animation: float 3s ease-in-out infinite;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 300px;
+            background: pink;
+            border-radius: 50%;
+        }
+
+        .heart:before {
+            top: -175px;
+            left: 0;
+        }
+
+        .heart:after {
+            left: 175px;
+            top: 0;
+        }
+
+        .images {
+            transform: rotate(45deg);
+            display: flex;
+            gap: 20px;
+        }
+
+        .images img {
+            width: 120px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+            0%, 100% { transform: rotate(-45deg) translateY(0); }
+            50% { transform: rotate(-45deg) translateY(-15px); }
         }
     </style>
 </head>
 <body>
 
-<div class="content">
+<div class="wrapper">
     <h1>Oh :(</h1>
-    <img src="images/image3.jpg" class="floating-img">
+
+    <div class="heart">
+        <div class="images">
+            <img src="images/image2.jpg">
+            <img src="images/image3.jpg">
+        </div>
+    </div>
 </div>
 
 </body>
