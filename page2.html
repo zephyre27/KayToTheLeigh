@@ -16,8 +16,7 @@
 
         /* TOP TEXT */
         .top-text {
-            margin-top: 30px; /* higher */
-            margin-bottom: 40px;
+            margin-top: 40px;
         }
 
         .top-text h1 {
@@ -27,12 +26,19 @@
             text-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
 
+        /* MAIN CONTENT WRAPPER */
+        .content-wrapper {
+            margin-top: 120px; /* pushes EVERYTHING below text down */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         /* HEART WRAPPER */
         .heart-wrapper {
             position: relative;
             width: 320px;
             height: 320px;
-            margin-top: 60px; /* moves heart down */
             animation: float 3s ease-in-out infinite;
         }
 
@@ -74,7 +80,7 @@
             justify-content: center;
             align-items: center;
             gap: 25px;
-            transform: translateY(-20px); /* centered inside heart */
+            transform: translateY(-20px);
             z-index: 2;
         }
 
@@ -86,7 +92,7 @@
 
         /* BOTTOM SECTION */
         .bottom-section {
-            margin-top: 120px; /* clearance from heart */
+            margin-top: 120px;
             text-align: center;
             color: white;
             position: relative;
@@ -129,23 +135,27 @@
     <h1>Oh :(</h1>
 </div>
 
-<div class="heart-wrapper">
-    <div class="heart"></div>
+<div class="content-wrapper">
 
-    <div class="images">
-        <img src="images/image2.jpg">
-        <img src="images/image3.jpg">
+    <div class="heart-wrapper">
+        <div class="heart"></div>
+
+        <div class="images">
+            <img src="images/image2.jpg">
+            <img src="images/image3.jpg">
+        </div>
     </div>
-</div>
 
-<div class="bottom-section">
-    <p>but think of the mems</p>
+    <div class="bottom-section">
+        <p>but think of the mems</p>
 
-    <button id="changeMind" onclick="window.location.href='page3.html'">
-        I changed my mind
-    </button>
+        <button id="changeMind" onclick="window.location.href='page3.html'">
+            I changed my mind
+        </button>
 
-    <button id="noAgain">I dont wanna be ur valentine</button>
+        <button id="noAgain">I dont wanna be ur valentine</button>
+    </div>
+
 </div>
 
 <script>
