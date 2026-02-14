@@ -8,11 +8,12 @@
             margin: 0;
             height: 100vh;
 
-            /* Clean Background Fix */
+            /* Show FULL image */
             background-image: url("images/image1.jpg");
             background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center 15%; /* adjust this number if needed */
+            background-size: contain; /* shows entire image */
+            background-position: center center;
+            background-color: black; /* fills empty space nicely */
 
             display: flex;
             justify-content: center;
@@ -23,7 +24,7 @@
 
         .overlay {
             text-align: center;
-            background: rgba(0,0,0,0.4);
+            background: rgba(0,0,0,0.5);
             padding: 40px;
             border-radius: 20px;
             color: white;
