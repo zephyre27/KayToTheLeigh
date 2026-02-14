@@ -16,94 +16,19 @@
         }
 
         .container {
-            text-align: center;
             position: relative;
+            text-align: center;
         }
 
+        /* TEXT — forced above everything */
         h1 {
+            position: relative;
+            z-index: 10;
             color: white;
             font-size: 4em;
             margin-bottom: 40px;
             text-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
 
-        /* Heart shape */
+        /* HEART */
         .heart {
-            position: relative;
-            width: 350px;
-            height: 350px;
-            transform: rotate(-45deg);
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .heart::before,
-        .heart::after {
-            content: "";
-            position: absolute;
-            width: 350px;
-            height: 350px;
-            background: pink;
-            border-radius: 50%;
-            z-index: 1;
-        }
-
-        .heart::before {
-            top: -175px;
-            left: 0;
-        }
-
-        .heart::after {
-            left: 175px;
-            top: 0;
-        }
-
-        .heart-core {
-            position: absolute;
-            width: 350px;
-            height: 350px;
-            background: pink;
-            z-index: 1;
-        }
-
-        /* Image container ABOVE heart */
-        .images {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            transform: rotate(45deg);
-            z-index: 2; /* Critical fix */
-        }
-
-        .images img {
-            width: 130px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-        }
-
-        @keyframes float {
-            0%, 100% { transform: rotate(-45deg) translateY(0); }
-            50% { transform: rotate(-45deg) translateY(-15px); }
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <h1>Oh :(</h1>
-
-    <div class="heart">
-        <div class="heart-core"></div>
-
-        <div class="images">
-            <img src="images/image2.jpg">
-            <img src="images/image3.jpg">
-        </div>
-    </div>
-</div>
-
-</body>
-</html>
