@@ -7,14 +7,7 @@
         body {
             margin: 0;
             height: 100vh;
-
-            /* Show FULL image */
-            background-image: url("images/image1.jpg");
-            background-repeat: no-repeat;
-            background-size: contain; /* shows entire image */
-            background-position: center center;
-            background-color: black; /* fills empty space nicely */
-
+            background: url("images/image1.jpg") no-repeat center center/cover;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -24,7 +17,7 @@
 
         .overlay {
             text-align: center;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.4);
             padding: 40px;
             border-radius: 20px;
             color: white;
